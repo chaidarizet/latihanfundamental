@@ -1,0 +1,69 @@
+<center><h1>--SOAL UJIAN--</h1></center>
+
+<p>
+    <b>1.Siapakah Presiden ketiga Republik Indonesia ?</b>
+    <br><br>
+    <input type="radio" name="soal1" onclick="pilih1(this.value)" value="1"> Prof.B.J.Habibie&nbsp;&nbsp;
+    <input type="radio" name="soal1" onclick="pilih1(this.value)" value="0"> Abdurrahman Wahid&nbsp;&nbsp;
+    <input type="radio" name="soal1" onclick="pilih1(this.value)" value="0"> Ir.Soekarno&nbsp;&nbsp;
+    <input type="radio" name="soal1" onclick="pilih1(this.value)" value="0"> Joko Widodo&nbsp;&nbsp;
+</p>
+<p>
+    <b>2.Berikut ini adalah nama-nama bahasa pemrograman, kecuali...</b>
+    <br><br>
+    <input type="radio" name="soal2" onclick="pilih2(this.value)" value="0"> Python&nbsp;&nbsp;
+    <input type="radio" name="soal2" onclick="pilih2(this.value)" value="1"> Micro:bit&nbsp;&nbsp;
+    <input type="radio" name="soal2" onclick="pilih2(this.value)" value="0"> JavaScript&nbsp;&nbsp;
+    <input type="radio" name="soal2" onclick="pilih2(this.value)" value="0"> HTML&nbsp;&nbsp;
+</p>
+<p>
+    <b>3.Apa judul llagu yang diduga diplagiat oleh lagu "Sayang" Via Vallen ?</b>
+    <br><br>
+    <input type="radio" name="soal3" onclick="pilih3(this.value)" value="0"> Qing Fei De Yi&nbsp;&nbsp;
+    <input type="radio" name="soal3" onclick="pilih3(this.value)" value="0"> Ting Hai&nbsp;&nbsp;
+    <input type="radio" name="soal3" onclick="pilih3(this.value)" value="1"> Mirai E Kiroro&nbsp;&nbsp;
+    <input type="radio" name="soal3" onclick="pilih3(this.value)" value="0"> Hau Siang Hau Siang&nbsp;&nbsp;
+</p>
+<p>
+    <b>4.Siapakah sosok dibalik topeng Batman ?</b>
+    <br><br>
+    <input type="radio" name="soal4" onclick="pilih4(this.value)" value="0"> Natasha Romanov&nbsp;&nbsp;
+    <input type="radio" name="soal4" onclick="pilih4(this.value)" value="0"> Peter Parker&nbsp;&nbsp;
+    <input type="radio" name="soal4" onclick="pilih4(this.value)" value="0"> Tony Stark&nbsp;&nbsp;
+    <input type="radio" name="soal4" onclick="pilih4(this.value)" value="1"> Bruce Wayne&nbsp;&nbsp;
+</p>
+
+<button id="klikini" onclick="nilai()"> S U B M I T </button>
+<p id="soal1"></p>
+<p id="soal2"></p>
+<p id="soal3"></p>
+<p id="soal4"></p>
+<p id="output"></p>
+        
+<script>
+    function pilih1(x)
+        {
+            document.getElementById("soal1").value=parseInt(x)*25
+        }
+    function pilih2(x)
+        {
+            document.getElementById("soal2").value=parseInt(x)*25
+        }
+    function pilih3(x)
+        {
+            document.getElementById("soal3").value=parseInt(x)*25
+        }
+    function pilih4(x)
+        {
+            document.getElementById("soal4").value=parseInt(x)*25
+        }
+    function nilai()
+        {
+            var nilai1=parseInt(document.getElementById("soal1").value)
+            var nilai2=parseInt(document.getElementById("soal2").value)
+            var nilai3=parseInt(document.getElementById("soal3").value)
+            var nilai4=parseInt(document.getElementById("soal4").value)
+            var total=nilai1+nilai2+nilai3+nilai4;
+            document.getElementById("output").innerHTML='<h1>Nilai akhir anda '+total+'</h1>'
+        }
+</script>

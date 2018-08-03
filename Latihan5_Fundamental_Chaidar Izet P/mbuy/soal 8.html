@@ -1,0 +1,22 @@
+<form id='form'>
+    <P>ketik kalimat : <input type="text"></P>
+    <P>karakter yang dicari : <input type="text"></P>
+</form>
+<button onclick="fungsiku()">CARI!!</button>
+<p id="test"></p>
+
+<script>
+    function fungsiku()
+    {
+        let input1 = document.getElementById('form').elements[0].value;
+        let input2 = document.getElementById('form').elements[1].value;
+ 
+        let ganti = new RegExp(input2,'g');
+        let kata2 = input1.replace(ganti,'');
+        let jumlah = input1.length - kata2.length;
+
+        document.getElementById('test').innerHTML = '<b>Jumlah \''+input2+'\' sebanyak '+jumlah+' buah!!!</b>';
+
+        console.log(ganti)
+    }
+</script>

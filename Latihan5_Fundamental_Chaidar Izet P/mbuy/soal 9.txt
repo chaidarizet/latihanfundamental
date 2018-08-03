@@ -1,0 +1,77 @@
+<form id="form">
+    <center>
+        <br>
+        <p>Masukkan Angka 1: <input type="number"></p>
+        <br>
+        <p>Masukkan Angka 2: <input type="number"></p>
+        <br>
+    </center>
+</form>
+    <center>
+        <button onclick="fungsiku1()"> tambah </button>
+        <button onclick="fungsiku2()"> kurang </button>
+        <p>
+        <button onclick="fungsiku3()"> kali </button>
+        <button onclick="fungsiku4()"> bagi </button>
+        <p>
+        <button onclick="fungsiku5()"> modulus </button>
+        <button onclick="fungsiku6()"> kuadrat </button>
+    </center>
+        <p id="tes"></p>
+    <script>
+        
+        function fungsiku1()
+        {
+            let input1 =
+                parseInt(document.getElementById("form").elements[0].value);
+            let input2 =
+                parseInt(document.getElementById("form").elements[1].value);
+            let x = parseInt(input1+input2);
+                document.getElementById("tes").innerHTML = '<center><b>'+input1+' + '+input2+' = '+x+'</b></center>';
+        }
+        function fungsiku2()
+        {
+            let input1 =
+                parseInt(document.getElementById("form").elements[0].value);
+            let input2 =
+                parseInt(document.getElementById("form").elements[1].value);
+            let x = parseInt(input1-input2);
+                document.getElementById("tes").innerHTML = '<center><b>'+input1+' - '+input2+' = '+x+'</b></center>';
+        }
+        function fungsiku3()
+        {
+            let input1 =
+                parseInt(document.getElementById("form").elements[0].value);
+            let input2 =
+                parseInt(document.getElementById("form").elements[1].value);
+            let x = parseInt(input1*input2);
+                document.getElementById("tes").innerHTML = '<center><b>'+input1+' * '+input2+' = '+x+'</b></center>';
+        }
+        function fungsiku4()
+        {
+            let input1 =
+                parseInt(document.getElementById("form").elements[0].value);
+            let input2 =
+                parseInt(document.getElementById("form").elements[1].value);
+            let x = parseInt(input1/input2);
+                document.getElementById("tes").innerHTML = '<center><b>'+input1+' / '+input2+' = '+x+'</b></center>';
+        }
+        function fungsiku5()
+        {
+            let input1 =
+                parseInt(document.getElementById("form").elements[0].value);
+            let input2 =
+                parseInt(document.getElementById("form").elements[1].value);
+            let x = parseInt(input1%input2);
+                document.getElementById("tes").innerHTML = '<center><b>'+input1+' % '+input2+' = '+x+'</b></center>';
+        }
+        function fungsiku6()
+        {
+            let input1 =
+                parseInt(document.getElementById("form").elements[0].value);
+            let input2 =
+                parseInt(document.getElementById("form").elements[1].value);
+            let x = parseInt(Math.pow(input1,input2));
+                document.getElementById("tes").innerHTML = '<center><b>'+input1+'<sup>'+input2+'</sup> = '+x+'</b></center>';
+        }
+    </script>

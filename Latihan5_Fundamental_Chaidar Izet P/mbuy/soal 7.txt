@@ -1,0 +1,19 @@
+<form id="form">
+    <p>Masukkan angka : <input type="number"></p>
+    <p>Masukkan pangkat : <input type="number"></p>
+    <br>
+</form>
+<button onclick="fungsiKu()"> Kuadratkan! </button>
+<p id="tes"></p>
+
+<script>
+    function fungsiKu()
+    {
+        let input1 =
+            document.getElementById('form').elements[0].value;
+        let input2 =
+            document.getElementById('form').elements[1].value;
+            document.getElementById("tes").innerHTML = 'hasil '+input1+'<sup>'+input2+'</sup> = '+Math.pow(input1,input2);
+            console.log(Math.pow(input1,input2));
+    }
+</script>

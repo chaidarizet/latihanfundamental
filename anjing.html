@@ -1,0 +1,68 @@
+<div>
+	<h2>Program Pencarian Karakter</h2>
+	<p> Ketik Kalimat : <input type="text" id="input1"></p>
+	<p> Karakter yang dicari : <input type="text" id="input2"></p>
+	<button onclick="pusing()">Cari!! </button>
+	<p id="outputName"></p>
+</div>
+<div>
+	<h2>Kalkulator Sederhana</h2>
+	<p>Masukkan Angka 1 :</p> <input type="number" id="angka1">
+	<p>Masukkan Angka 2 :</p> <input type="number" id="angka2"><br>
+	<button onclick="kali()">Kali x</button>
+	<button onclick="bagi()">Bagi : </button>
+	<button onclick="tambah()">Tambah + </button><br>
+	<button onclick="kurang()">Kurang - </button>
+	<button onclick="modulus()">Modulus %</button>
+	<button onclick="pangkat()">Pangkat ^</button>
+
+	<p id="outputName1"></p>
+</div>
+<script>
+	function pusing(){
+		var kal = document.getElementById('input1').value;
+		var lengthAwal = kal.length;
+		var lengthAkhir = kalimat.replace(/input2/g, '').length;
+		document.getElementById('outputName').innerHTML = 'Banyaknya huruf '+ input2+ 'pada' + kal + ' sebanyak ' + (lengthAwal-lengthAkhir) + ' buah';
+	}
+
+
+	// kalkulator
+		function kali(){
+			var a1 = parseInt(document.getElementById("angka1").value);
+	    	var	a2 = parseInt(document.getElementById("angka2").value);
+	    	var outputName1 = a1*a2;
+	    	document.getElementById("outputName1").innerHTML = 'Hasil ' + a1 + ' x ' + a2 + ' = ' + outputName1;
+		}
+		function bagi(){
+			var a1 = parseInt(document.getElementById("angka1").value);
+	    	var	a2 = parseInt(document.getElementById("angka2").value);
+	    	var outputName1 = a1/a2;
+	    	document.getElementById("outputName1").innerHTML = 'Hasil ' + a1 + ' : ' + a2 + ' = ' + outputName1;
+		}
+		function tambah(){
+			var a1 = parseInt(document.getElementById("angka1").value);
+	    	var	a2 = parseInt(document.getElementById("angka2").value);
+	    	var outputName1 = a1+a2;
+	    	document.getElementById("outputName1").innerHTML = 'Hasil ' + a1 + ' + ' + a2 + ' = ' + outputName1;
+		}
+		function kurang(){
+			var a1 = parseInt(document.getElementById("angka1").value);
+	    	var	a2 = parseInt(document.getElementById("angka2").value);
+	    	var outputName1 = a1-a2;
+	    	document.getElementById("outputName1").innerHTML = 'Hasil ' + a1 + ' - ' + a2 + ' = ' + outputName1;
+		}
+		function modulus(){
+			var a1 = parseInt(document.getElementById("angka1").value);
+	    	var	a2 = parseInt(document.getElementById("angka2").value);
+	    	var outputName1 = a1%a2;
+	    	document.getElementById("outputName1").innerHTML = 'Hasil ' + a1 + ' % ' + a2 + ' = ' + outputName1;
+		}
+	  	function pangkat(a1,a2){
+	    	var a1 = parseInt(document.getElementById("angka1").value);
+	    	var	a2 = parseInt(document.getElementById("angka2").value);
+	    	var outputName1 = Math.pow(a1,a2);
+
+	    	document.getElementById("outputName1").innerHTML = 'Hasil ' + a1 + '<sup>'+ a2+ '</sup> = ' + outputName1;
+		}
+</script>

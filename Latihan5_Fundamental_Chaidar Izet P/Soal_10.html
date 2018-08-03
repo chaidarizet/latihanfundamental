@@ -1,0 +1,125 @@
+
+<h1>Soal 10</h1>
+<div id="soal"></div>
+<button id="submit">Get Results</button>
+<div id="ouputName"></div>
+
+
+
+<script>
+  var pertanyaan = [
+    {
+      question: "1. Siapakah Presiden ketiga Replubic Indonesia?",
+      jawaban: {
+        a: "<emp>Prof.B.J.Habibie</emp>",
+        b: "Abdurrahman Wahid",
+        c: "Ir.Soekarno",
+        d: "Joko Widodo"
+      },
+      correctAnswer: "a"
+    },
+    {
+      question: "2. Berikut adalah nama-nama bahasa pemrograman, kecuali ...",
+      jawaban: {
+        a: "Python",
+        b: "Micro:bit",
+        c: "JavaScript",
+        d: "HTML"
+      },
+      correctAnswer: "b"
+    },
+    {
+      question: "3. Apa judul yang diduga plagiat oleh lagu 'Sayang' Via Vallen?",
+      jawaban: {
+        a: "Quing Fei De Yi",
+        b: "Ting Hai",
+        c: "Mirai E Kirono",
+        d: "Hau Siang Hau Siang"
+      },
+      correctAnswer: "c"
+    },
+     
+    {
+      question: "Siapakah sosok dibalik topeng Batman",
+      jawaban: {
+        a: "Natasha",
+        b: "Peter Parker",
+        c: "Tony Stark",
+        d: "Bruce Wayne"
+      },
+      correctAnswer: "d"
+    }
+  ];
+
+
+var penampungsoal = document.getElementById('soal');
+var hasilpenampung = document.getElementById('ouputName');
+var submitButton = document.getElementById('submit');
+
+persoalan(pertanyaan, penampungsoal, hasilpenampung, submitButton);
+
+function persoalan(pertanyaan, penampungsoal, hasilpenampung, submitButton){
+
+  function nunjukpertanyaan(pertanyaan, penampungsoal){
+    var output = [];
+    var jawaban;
+
+    for(var i=0; i<pertanyaan.length; i++){
+      
+      jawaban = [];
+
+      for(letter in pertanyaan[i].jawaban){
+
+        jawaban.push(
+          '<label>'
+            + '<input type="radio" name="question'+i+'" value="'+letter+'">'
+            + letter + ': '
+            + pertanyaan[i].jawaban[letter]
+          + '</label>'
+        );
+      }
+
+      output.push(
+        '<div class="question">' + pertanyaan[i].question + '</div>'
+        + '<div class="jawaban">' + jawaban.join('') + '</div>'
+      );
+    }
+
+    penampungsoal.innerHTML = output.join('');
+  }
+
+
+  function hasil(pertanyaan, penampungsoal, hasilpenampung)
+  {
+    
+    var penampungjawaban = penampungsoal.querySelectorAll('.jawaban');
+    
+    var yangdijawab = '';
+    var jawabbener = 0;
+    
+    for(var i=0; i<pertanyaan.length; i++){
+
+      yangdijawab = (penampungjawaban[i].querySelector('input[name=question'+i+']:checked')||{}).value;
+      
+          if(yangdijawab===pertanyaan[i].correctAnswer){
+            jawabbener++;
+            
+            penampungjawaban[i].style.color = 'lightgreen';
+          }
+          else{
+            penampungjawaban[i].style.color = 'red';
+          }
+          }
+      var nilaiAkhir = jawabbener/pertanyaan.length*100;
+      hasilpenampung.innerHTML = 'Nilai akhir anda ' + nilaiAkhir;
+
+  }
+
+  nunjukpertanyaan(pertanyaan, penampungsoal);
+  
+  submitButton.onclick = function(){
+    hasil(pertanyaan, penampungsoal, hasilpenampung);
+  }
+
+}
+</script>

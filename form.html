@@ -1,0 +1,69 @@
+<!--  <form id="form">
+Nama: <input type="text"> <br>
+Usia : <input type="number"><br>
+Sex : <input id="pria" type="radio" name="Sex" onclick="fungsiku(this.value)" value="pria">Pria
+<input  id="wanita" type="radio" name="Sex" onclick="fungsiku(this.value)" value="wanita"> Wanita
+
+</form>
+<button onclick="fungsiKu()"> Coba klik! </button> <p id="tes"> Hasil </p>
+<script>
+	function fungsiKu() 
+	{
+		let input1 = document.getElementById("form").elements[0].value;
+		let input2 = document.getElementById("form").elements[1].value; 
+		// let	sex = document.getElementById("form").elements[2 && 3].value;
+		if ( document,getElementById('pria').checked){
+			sex = document.getElementById('pria').value;
+		}else{
+			sex = document.getElementById('wanita').value;
+		}
+
+		document.getElementById("tes").innerHTML = "Nama saya : " +  input1 + "<br>" + "Usia saya : " + input2 + "<br>" + "Sex : "+ sex ;
+	} 
+	
+
+
+</script>
+
+ -->
+
+ <input id="a1" type="checkbox" onclick="fungsiKu1(this.value)" value="Pria"> Pria
+<input id="a2" type="checkbox"
+onclick="fungsiKu1(this.value)" value="Wanita"> Wanita
+<br><br>
+<button id="klikini" onclick="fungsiKu2(this.value)"> klik
+</button>
+<p id="output"></p>
+
+ <script>
+function fungsiKu1() {
+if(document.getElementById("a1").checked==true &&
+document.getElementById("a2").checked==false){
+document.getElementById("klikini").value = 'Pria'}
+else if(document.getElementById("a1").checked==false &&
+document.getElementById("a2").checked==true){
+document.getElementById("klikini").value = 'Wanita'}
+else if(document.getElementById("a1").checked==true &&
+document.getElementById("a2").checked==true){
+document.getElementById("klikini").value = 'Pria & Wanita'}
+else{document.getElementById("klikini").value = ''}
+}
+function fungsiKu2(y) { document.getElementById("output").innerHTML = y }
+</script>
+
+<!-- latihan 5 fundamental Chaidar Izet Prasetio -->
+<!-- <p>Masukkan Angka :</p> <input id="angka" type="number"> <br>
+<button onclick="kuadrat(this.value)">Kuadratkan</button> -->
+<!-- <p id="hasil" onclick="kuadrat"></p> -->
+
+<!-- <script>
+	function kuadrat(){
+		let pangkat = document.getElementById(angka*2)
+					// console.log(Math.pow((angka), 2));
+					document.getElementById(hasil).innerHTML = " Hasil " + angka + "<sup>2</sup> = " + pangkat;
+					
+			
+			
+	}
+
+</script> -->
